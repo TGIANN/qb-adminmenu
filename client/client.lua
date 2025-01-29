@@ -626,7 +626,8 @@ local function OpenBanMenu(banplayer)
 end
 
 local function OpenPlayerMenus(player)
-    local Players = MenuV:CreateMenu(false, player.cid .. Lang:t('info.options'), menuLocation, 220, 20, 60, 'size-125', 'none', 'menuv') -- Players Sub Menu
+    local menuHeader = ("[%s] %s %s"):format(player.playerid, player.cid, Lang:t('info.options'))
+    local Players = MenuV:CreateMenu(false, menuHeader, menuLocation, 220, 20, 60, 'size-125', 'none', 'menuv') -- Players Sub Menu
     Players:ClearItems()
     MenuV:OpenMenu(Players)
     local elements = {
